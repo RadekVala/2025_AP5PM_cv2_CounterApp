@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 import { IonCard, IonButton, IonCardContent, IonInput } from "@ionic/angular/standalone";
 import { FormsModule } from '@angular/forms';
 
@@ -14,6 +14,7 @@ export class CounterComponent  implements OnInit {
   @Input() count = 0
   @Input() name = ''
 
+  @Output() saved = new EventEmitter<{ name: string, count: number}>();
   constructor() { }
 
   ngOnInit() {
@@ -26,6 +27,12 @@ export class CounterComponent  implements OnInit {
 
   onReset() {
     this.count = 0
+  }
+
+  onSave() {
+    this.saved.emit({ name: this.name, count: this.count})
+    this.count = 0
+    this.name = ''
   }
 
 }
