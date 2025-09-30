@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { IonCard, IonButton, IonCardContent, IonInput } from "@ionic/angular/standalone";
 import { FormsModule } from '@angular/forms';
 
@@ -11,8 +11,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class CounterComponent  implements OnInit {
 
-  count = 0
-  name = ''
+  @Input() count = 0
+  @Input() name = ''
 
   constructor() { }
 
