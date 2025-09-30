@@ -14,4 +14,17 @@
   </ion-header>
 
   <app-counter (saved)="onSaved($event)" name="Počet hladových studentů" [count]="12"></app-counter>
+
+  <ion-list>
+    @for (counter of savedCounters; track counter.name) {
+      <ion-item>
+        <ion-label>{{ counter.name }}, počet: {{ counter.count }}</ion-label>
+      </ion-item>
+    } @empty 
+    {
+      <ion-item>
+        <ion-label>Nic tu neni</ion-label>
+      </ion-item>
+    }
+  </ion-list>
 </ion-content>

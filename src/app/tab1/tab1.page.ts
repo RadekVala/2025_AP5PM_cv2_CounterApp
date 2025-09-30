@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonLabel, IonList, IonItem } from '@ionic/angular/standalone';
 import { CounterComponent } from '../counter/counter.component';
+import { NgFor } from '@angular/common';
 
-interface SavedCounter {
+export interface SavedCounter {
   name: string,
   count: number
 }
@@ -11,7 +12,7 @@ interface SavedCounter {
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, CounterComponent],
+  imports: [IonItem, IonList, IonLabel, IonHeader, IonToolbar, IonTitle, IonContent, CounterComponent, NgFor],
 })
 export class Tab1Page {
 
@@ -20,7 +21,8 @@ export class Tab1Page {
 
   constructor() {}
 
-  onSaved(event: { name: string, count: number}) {
-     console.log('Ulozeno: ', event.name, ',', event.count)
+  onSaved(counter: SavedCounter) {
+     console.log('Ulozeno: ', counter.name, ',', counter.count)
+     this.savedCounters.unshift(counter)
   }
 }
