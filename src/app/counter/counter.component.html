@@ -1,5 +1,6 @@
 <ion-card>
   <ion-card-content>
+    <ion-input [(ngModel)]="name" type="text" placeholder="Counter name"></ion-input>
      <h1>{{ count }}</h1>
     <ion-button (click)="onIncrement()" expand="block" fill="solid" shape="round">
       Increment

@@ -1,16 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { IonContent, IonCard, IonButton, IonCardContent } from "@ionic/angular/standalone";
+import { IonCard, IonButton, IonCardContent, IonInput } from "@ionic/angular/standalone";
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-counter',
   templateUrl: './counter.component.html',
   styleUrls: ['./counter.component.scss'],
   standalone: true,
-  imports: [IonCardContent, IonButton, IonCard, IonContent],
+  imports: [IonInput, IonCardContent, IonButton, IonCard, FormsModule],
 })
 export class CounterComponent  implements OnInit {
 
   count = 0
+  name = ''
 
   constructor() { }
 
