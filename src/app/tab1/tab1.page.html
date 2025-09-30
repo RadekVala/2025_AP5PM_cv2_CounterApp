@@ -13,5 +13,5 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-counter name="Počet hladových studentů" [count]="12"></app-counter>
+  <app-counter (saved)="onSaved($event)" name="Počet hladových studentů" [count]="12"></app-counter>
 </ion-content>
