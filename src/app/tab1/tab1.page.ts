@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonInput, IonItem } from '@ionic/angular/standalone';
+import { CounterComponent } from '../counter/counter.component';
 
 interface SavedCounter {
   name: string,
@@ -10,7 +11,7 @@ interface SavedCounter {
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
-  imports: [IonButton, IonHeader, IonToolbar, IonTitle, IonContent],
+  imports: [IonButton, IonHeader, IonToolbar, IonTitle, IonContent, CounterComponent],
 })
 export class Tab1Page {
 
