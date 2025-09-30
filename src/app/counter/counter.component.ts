@@ -1,6 +1,7 @@
 import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 import { IonCard, IonButton, IonCardContent, IonInput } from "@ionic/angular/standalone";
 import { FormsModule } from '@angular/forms';
+import { SavedCounter } from '../tab1/tab1.page';
 
 @Component({
   selector: 'app-counter',
@@ -14,7 +15,7 @@ export class CounterComponent  implements OnInit {
   @Input() count = 0
   @Input() name = ''
 
-  @Output() saved = new EventEmitter<{ name: string, count: number}>();
+  @Output() saved = new EventEmitter<SavedCounter>();
   constructor() { }
 
   ngOnInit() {
